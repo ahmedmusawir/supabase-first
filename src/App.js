@@ -9,6 +9,8 @@ import AddPostPage from "./pages/AddPostPage";
 import EditPostPage from "./pages/EditPostPage";
 import PostsContextProvider from "./contexts/PostsContext";
 import SupaMoose from "./pages/SupaMoose";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
 
 function App(props) {
   return (
@@ -18,6 +20,15 @@ function App(props) {
         <main>
           <Switch>
             <Route exact path="/">
+              <SupaMoose />
+            </Route>
+            <Route exact path="/login">
+              <LoginPage />
+            </Route>
+            <Route exact path="/signup">
+              <SignupPage />
+            </Route>
+            <Route exact path="/fetch">
               <HomePage />
             </Route>
             <Route exact path="/post/:id">
@@ -29,9 +40,7 @@ function App(props) {
             <Route exact path="/add-post">
               <AddPostPage />
             </Route>
-            <Route exact path="/supamoose">
-              <SupaMoose />
-            </Route>
+
             <Route path="/*">
               <NotFound />
             </Route>
